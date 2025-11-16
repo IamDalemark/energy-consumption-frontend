@@ -25,9 +25,9 @@ interface PredictionResult {
 export default function Home() {
   const [formData, setFormData] = useState<FormData>({
     building_type: 'Residential',
-    square_footage: 7063,
-    number_of_occupants: 76,
-    appliances_used: 10,
+    square_footage: 250,
+    number_of_occupants: 4,
+    appliances_used: 20,
   });
 
   const [result, setResult] = useState<PredictionResult | null>(null);
@@ -196,9 +196,9 @@ export default function Home() {
             {/* Result */}
             {result && (
               <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-md">
-                <p className="text-sm text-gray-600 mb-1">Predicted Energy Consumption:</p>
+                <p className="text-sm text-gray-600 mb-1">Predicted Monthly Energy Consumption:</p>
                 <p className="text-3xl font-bold text-green-700">
-                  {result.energy_consumption.toFixed(2)}
+                  {(result.energy_consumption/4).toFixed(2)}
                   <span className="text-lg ml-2">{result.unit || 'kWh'}</span>
                 </p>
               </div>
@@ -214,10 +214,10 @@ export default function Home() {
 
                 {/* Main Result */}
                 <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-6">
-                  <p className="text-gray-600 text-sm mb-2">Predicted Energy Consumption</p>
+                  <p className="text-gray-600 text-sm mb-2">Predicted Monthly Energy Consumption</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-bold text-green-700">
-                      {result.energy_consumption.toFixed(2)}
+                      {(result.energy_consumption/4).toFixed(2)}
                     </span>
                     <span className="text-xl text-gray-700">{result.unit || 'kWh'}</span>
                   </div>
