@@ -89,7 +89,7 @@ export default function DatasetPage() {
     const pathData = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
 
     const metricLabels = {
-      energy_consumption: 'Energy Consumption (kWh)',
+      energy_consumption: '4 Month Energy Consumption (kWh)',
       square_footage: 'Square Footage',
       number_of_occupants: 'Number of Occupants',
       appliances_used: 'Appliances Used',
